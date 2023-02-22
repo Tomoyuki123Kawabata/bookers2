@@ -3,7 +3,6 @@ class BooksController < ApplicationController
   def index
     @books = Book.all
     
-    
   end
   
   def create
@@ -11,7 +10,7 @@ class BooksController < ApplicationController
     @book.user_id = current_user.id
     if @book.save
       flash[:notice] = "Registration successfully"
-      redirect_to books_path(@book.id)
+      redirect_to book_path(@book.id)
     else
      @books = Book.all
      render :index
