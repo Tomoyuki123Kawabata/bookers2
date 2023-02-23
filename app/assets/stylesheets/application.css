@@ -13,3 +13,32 @@
  *= require_tree .
  *= require_self
  */
+th {
+  padding-bottom: 5px;
+}
+
+td {
+  padding-bottom: 7px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+label {
+  display: block;
+}
+
+.field, .actions {
+  margin-bottom: 10px;
+}
+
+.message {
+  color: green;
+}
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+

@@ -1,26 +1,25 @@
 <div class="container px-5 px-sm-0">
   <div class="row">
     <div class="col-md-3">
-      <h2>User info</h2>
-      <%= render 'list' %>
+       <%= render 'list' %>
     </div>
 <div class="col-md-8 offset-md-1">
   <h2>Books</h2>
-<table>
-  <tr>
+<table class="table table-hover table-inverse">
     <thead>
-    <th>Title</th>
-    <th>Opinion</th>
-    <th colspan="3"></th>
+      <tr>
+        <th></th>
+        <th>Title</th>
+        <th>Opinion</th>
+        <th colspan="3"></th>
+      </tr>
     </thead>
-  </tr>
-  <tbody>
+    <tbody>
     <% @books.each do |book| %>
     <tr>
-      <td><%= book.title %></td>
+      <td><%= image_tag  @user.get_profile_image(100,100) %></td>
+      <td><%= link_to book.title,book_path(book.id) %></td>
       <td><%= book.body %></td>
-      <td><%= link_to "Edit" ,edit_book_path(book.id)%></td>
-      <td><%= link_to "Destroy", book_path(book.id), method: :delete, "data-confirm" => "Are yuo sure?" %></td>
     </tr>
     <% end %>
   </tbody>
