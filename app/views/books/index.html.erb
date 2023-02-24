@@ -1,14 +1,14 @@
 <div class="container px-5 px-sm-0">
   <div class="row">
     <div class="col-md-3">
-       <% if @book.errors.any? %>
+  <% if @book.errors.any? %>
   <%= @book.errors.count %>件のエラーが発生しました
   <ul>
     <% @book.errors.full_messages.each do |message| %>
       <li><%= message %></li>
     <% end %>
   </ul>
-<% end %>
+  <% end %>
        <%= render 'list' %>
     </div>
 <div class="col-md-8 offset-md-1">
@@ -24,8 +24,12 @@
     </thead>
     <tbody>
     <% @books.each do |book| %>
-    <tr>
-      <td><%= image_tag  @user.get_profile_image(100,100) %></td>
+     <tr>
+       <td>
+        <%= link_to user_path(@user.id) do %>
+      <%= image_tag  @user.get_profile_image(100,100) %>
+        <% end %>
+      </td>
       <td><%= link_to book.title,book_path(book.id) %></td>
       <td><%= book.body %></td>
     </tr>
